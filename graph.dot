@@ -1,0 +1,20 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "null_resource.umbrella-repo" [label="null_resource.umbrella-repo"];
+  subgraph "cluster_module.compute-repo" {
+    label = "module.compute-repo"
+    fontname = "sans-serif"
+    "module.compute-repo.null_resource.server-1" [label="null_resource.server-1"];
+  }
+  subgraph "cluster_module.network-repo" {
+    label = "module.network-repo"
+    fontname = "sans-serif"
+    "module.network-repo.null_resource.network-1" [label="null_resource.network-1"];
+  }
+  subgraph "cluster_module.storage-repo" {
+    label = "module.storage-repo"
+    fontname = "sans-serif"
+    "module.storage-repo.null_resource.db-1" [label="null_resource.db-1"];
+  }
+}
